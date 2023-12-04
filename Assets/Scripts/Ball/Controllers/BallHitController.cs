@@ -23,7 +23,7 @@ namespace Ball.Controllers
             BallModel destroyBallModel;
             BallModel upgradeBallModel;
             
-            if (model.Velocity.sqrMagnitude > hitModel.Velocity.sqrMagnitude)
+            if (model.Velocity.sqrMagnitude >= hitModel.Velocity.sqrMagnitude)
             {
                 destroyBallModel = hitModel;
                 upgradeBallModel = model;

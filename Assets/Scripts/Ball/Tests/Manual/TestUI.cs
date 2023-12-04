@@ -32,7 +32,7 @@ namespace Ball.Tests.Manual
 
         private void OnSpawnClick()
         {
-            _ballService.Spawn(Vector3.up);
+            _ballService.Spawn(Vector3.up*2);
         }
 
         private void OnForceClick()

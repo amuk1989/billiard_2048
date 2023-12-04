@@ -35,7 +35,7 @@ namespace Ball.Services
 
         public void Spawn(Vector3 position)
         {
-            _currentBall = _ballModelRepository.Create(new BallData(position, _cameraService.GetPositionProvider(),
+            _currentBall ??= _ballModelRepository.Create(new BallData(position, _cameraService.GetPositionProvider(),
                 Guid.NewGuid().ToString()));
         }
 
@@ -48,6 +48,7 @@ namespace Ball.Services
         public void SetForce(Vector3 force)
         {
             _currentBall?.SetForce(force);
+            _currentBall = null;
         }
     }
 }
