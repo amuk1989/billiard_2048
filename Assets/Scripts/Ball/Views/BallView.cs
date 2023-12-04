@@ -12,6 +12,7 @@ namespace Ball.Views
     public class BallView : MonoBehaviour, IEntity, IDisposable
     {
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private Transform _viewTransform;
 
         private BallConfigData _configData;
         private BallModel _model;
@@ -36,6 +37,12 @@ namespace Ball.Views
                 .ForceAsObservable()
                 .Subscribe(force => _rigidbody.AddForce(force))
                 .AddTo(this);
+
+            _model
+                .RotationAsObservable()
+                .Subscribe(value => _viewTransform.rotation = value)
+                .AddTo(this);
+                    
 
 #if UNITY_EDITOR
             gameObject.name += $"_{Id}";

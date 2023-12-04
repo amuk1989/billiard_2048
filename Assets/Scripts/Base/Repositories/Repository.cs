@@ -24,7 +24,7 @@ namespace Base.Repositories
         public IObservable<TModel> OnAddedModelAsRx() => ModelsContainer.ObserveAdd().Select(x => x.Value).AsObservable();
         public IObservable<TModel> OnRemoveModelAsRx() => ModelsContainer.ObserveRemove().Select(x => x.Value).AsObservable();
 
-        public TModel Create(TArgs args)
+        public virtual TModel Create(TArgs args)
         {
             var model = _factory.Create(args);
 
