@@ -16,4 +16,4 @@ MonoBehaviour:
     _prefab: {fileID: 6898116187441548249, guid: dc9d141df8160524e8d79dfcd8c93c67,
       type: 3}
     _sleepThreshold: 37
-    _rotationSpeed: 3
+    _rotationSpeed: 2
