@@ -14,10 +14,12 @@ namespace Ball.Models
         public Vector3 Position { get; private set; }
 
         private readonly ReactiveCommand<Vector3> _force = new();
-        private readonly ReactiveCommand<BallModel> _onHit = new();
         private readonly ReactiveProperty<uint> _hitPoints = new();
 
+        private Vector3 _velocity;
+
         public uint HitPoints => _hitPoints.Value;
+        public Vector3 Velocity => _velocity;
 
         private BallModel(BallData data)
         {
@@ -26,7 +28,6 @@ namespace Ball.Models
         }
 
         public IObservable<Vector3> ForceAsObservable() => _force.AsObservable();
-        public IObservable<BallModel> HitAsObservable() => _onHit.AsObservable();
         public IObservable<uint> HitPointsAsObservable() => _hitPoints.AsObservable();
 
         public void UpdatePosition(Vector3 position)
@@ -39,7 +40,10 @@ namespace Ball.Models
             _force.Execute(force);
         }
 
-        public void OnHit(BallModel model) => _onHit.Execute(model);
+        public void UpdateVelocity(Vector3 velocity)
+        {
+            _velocity = velocity;
+        }
 
         public void UpgradeHitPoints(uint points)
         {

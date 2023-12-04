@@ -33,16 +33,6 @@ namespace Ball.Services
         public void Spawn(Vector3 position)
         {
             _currentBall = _ballModelRepository.Create(new BallData(position, Guid.NewGuid().ToString()));
-            
-            _onHitFlow?.Dispose();
-            
-            _onHitFlow = _currentBall
-                .HitAsObservable()
-                .Subscribe(model =>
-                {
-                    model.UpgradeHitPoints(model.HitPoints);
-                    _ballModelRepository.Remove(model.Id);
-                });
         }
 
         public void ClearAll()
