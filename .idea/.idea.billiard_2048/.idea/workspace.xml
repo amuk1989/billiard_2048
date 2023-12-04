@@ -5,41 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Data.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Data/BallViewData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Data/BallViewData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Interfaces/IPositionProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Interfaces/IPositionProvider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Bootstrap.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Bootstrap/CameraInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Bootstrap/CameraInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Interfaces.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Interfaces/ICameraService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Interfaces/ICameraService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Models/CameraModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Models/CameraModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Services.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Services/CameraService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Services/CameraService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Views.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Views/CameraComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Views/CameraComponent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ball.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ball.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Models/BallModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Models/BallModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Repositories/BallModelRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Repositories/BallModelRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Services/BallService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Services/BallService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Configs/BallConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Configs/BallConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/BallView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/BallView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Repositories/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/MainInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/MainInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BallShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/BallShader.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,35 +20,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
   <component name="ProjectId" id="2Z4x0IFbHvzUW39zCtV5mf1JA6x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/ball__view",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/andrewmukholzoev/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
-      "/Users/andrewmukholzoev/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
-      "/Users/andrewmukholzoev/.local/share/Symbols/src"
-    ]
-  }
-}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/MacOS/Unity" />

@@ -16,8 +16,10 @@ namespace Ball.Configs
     {
         [SerializeField] private BallView _prefab;
         [Range(0, 100)] [SerializeField] private uint _sleepThreshold = 25;
+        [Range(0, 3)] [SerializeField] private float _rotationSpeed = 1f;
 
         public uint SleepThreshold => _sleepThreshold;
         public BallView Prefab => _prefab;
+        public float RotationSpeed => _rotationSpeed;
     } 
 }
