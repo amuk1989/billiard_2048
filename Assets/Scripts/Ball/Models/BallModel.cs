@@ -1,22 +1,24 @@
 ﻿using System;
 using Ball.Repositories;
 using Base.Interfaces;
-using HitMechanic.Interfaces;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
 namespace Ball.Models
 {
-    public class BallModel: IEntity, IValueData, IHittable
+    public class BallModel: IEntity, IValueData, IInitializable, IDisposable
     {
         public string Id { get; private set; }
         public Vector3 Position { get; private set; }
 
         private readonly ReactiveCommand<Vector3> _force = new();
         private readonly ReactiveProperty<uint> _hitPoints = new();
+        private readonly ReactiveProperty<Quaternion> _rotation = new();
 
         private Vector3 _velocity;
+        private readonly IPositionProvider _positionProvider;
+        private readonly CompositeDisposable _compositeDisposable = new();
 
         public uint HitPoints => _hitPoints.Value;
         public Vector3 Velocity => _velocity;
@@ -25,11 +27,29 @@ namespace Ball.Models
         {
             Id = data.Id;
             Position = data.Position;
+            _positionProvider = data.TargetPositionProvider;
         }
 
         public IObservable<Vector3> ForceAsObservable() => _force.AsObservable();
         public IObservable<uint> HitPointsAsObservable() => _hitPoints.AsObservable();
+        public IObservable<Quaternion> RotationAsObservable() => _rotation.AsObservable();
 
+        public void Initialize()
+        {
+            Observable
+                .EveryUpdate()
+                .Subscribe(_ =>
+                {
+                    _rotation.Value = Quaternion.LookRotation(_positionProvider.Position - Position);
+                })
+                .AddTo(_compositeDisposable);
+        }
+
+        public void Dispose()
+        {
+            _compositeDisposable?.Dispose();
+        }
+        
         public void UpdatePosition(Vector3 position)
         {
             Position = position;

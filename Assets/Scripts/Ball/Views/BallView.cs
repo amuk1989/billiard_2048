@@ -12,10 +12,13 @@ namespace Ball.Views
     public class BallView : MonoBehaviour, IEntity, IDisposable
     {
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private Transform _viewTransform;
 
         private BallConfigData _configData;
         private BallModel _model;
         private BallHitController _ballHitController;
+        private Quaternion _targetRotation = Quaternion.identity;
+        private bool _isRotation;
 
         public string Id => gameObject.GetInstanceID().ToString();
 
@@ -37,6 +40,15 @@ namespace Ball.Views
                 .Subscribe(force => _rigidbody.AddForce(force))
                 .AddTo(this);
 
+            _model
+                .RotationAsObservable()
+                .Subscribe(value =>
+                {
+                    _targetRotation = value;
+                })
+                .AddTo(this);
+                    
+
 #if UNITY_EDITOR
             gameObject.name += $"_{Id}";
 #endif
@@ -51,16 +63,22 @@ namespace Ball.Views
         {
             _model.UpdatePosition(transform.position);
             _model.UpdateVelocity(_rigidbody.velocity);
+
+            if (!_isRotation && (_targetRotation.eulerAngles - transform.rotation.eulerAngles).sqrMagnitude > 0.01)
+            {
+                _isRotation = true;
+            }
+            else if (_isRotation && (_targetRotation.eulerAngles - transform.rotation.eulerAngles).sqrMagnitude < 0.01)
+            {
+                _isRotation = false;
+            }
+            
+            if (_isRotation) transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * _configData.RotationSpeed);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log($"[BallView] Hit to {collision.gameObject.name}");
-            
             if(!collision.gameObject.TryGetComponent<BallView>(out var collisionBall)) return;
-
-            Debug.Log($"[BallView] {collisionBall.gameObject.name} is BallView");
-            
             _ballHitController.OnHit(_model, collisionBall._model);
         }
     }
