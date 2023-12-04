@@ -1,5 +1,6 @@
 using System;
 using Ball.Configs;
+using Ball.Controllers;
 using Ball.Models;
 using Base.Interfaces;
 using UniRx;
@@ -14,14 +15,16 @@ namespace Ball.Views
 
         private BallConfigData _configData;
         private BallModel _model;
+        private BallHitController _ballHitController;
 
         public string Id => gameObject.GetInstanceID().ToString();
 
         [Inject]
-        private void Construct(BallModel model, BallConfigData configData)
+        private void Construct(BallModel model, BallConfigData configData, BallHitController ballHitController)
         {
             _configData = configData;
             _model = model;
+            _ballHitController = ballHitController;
         }
 
         private void Start()
@@ -47,6 +50,7 @@ namespace Ball.Views
         private void Update()
         {
             _model.UpdatePosition(transform.position);
+            _model.UpdateVelocity(_rigidbody.velocity);
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -57,7 +61,7 @@ namespace Ball.Views
 
             Debug.Log($"[BallView] {collisionBall.gameObject.name} is BallView");
             
-            _model.OnHit(collisionBall._model);
+            _ballHitController.OnHit(_model, collisionBall._model);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Ball.Configs;
+using Ball.Controllers;
 using Ball.Models;
 using Ball.Repositories;
 using Ball.Services;
@@ -31,6 +32,11 @@ namespace Ball.Bootstrap
             
             Container
                 .BindInterfacesTo<BallService>()
+                .AsSingle()
+                .NonLazy();
+
+            Container
+                .BindInterfacesAndSelfTo<BallHitController>()
                 .AsSingle()
                 .NonLazy();
 
