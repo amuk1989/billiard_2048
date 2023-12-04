@@ -1,14 +1,12 @@
 ﻿using System;
 using Ball.Repositories;
 using Base.Interfaces;
-using HitMechanic.Interfaces;
 using UniRx;
 using UnityEngine;
-using Zenject;
 
 namespace Ball.Models
 {
-    public class BallModel: IEntity, IValueData, IHittable
+    public class BallModel: IEntity, IValueData
     {
         public string Id { get; private set; }
         public Vector3 Position { get; private set; }
