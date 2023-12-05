@@ -1,6 +1,9 @@
 ﻿using Ball.Bootstrap;
 using Camera.Bootstrap;
+using Cue.Bootstrap;
 using GameArea.Bootstrap;
+using Input.Bootstrap;
+using Rules.Bootstrap;
 using Zenject;
 
 namespace Main.Bootstrap
@@ -12,6 +15,9 @@ namespace Main.Bootstrap
             Container.Install<BallsInstaller>();
             Container.Install<GameAreaInstaller>();
             Container.Install<CameraInstaller>();
+            Container.Install<CueInstaller>();
+            Container.Install<RulesInstaller>();
+            Container.Install<InputInstaller>();
         }
     }
 }

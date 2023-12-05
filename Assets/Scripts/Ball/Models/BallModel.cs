@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Ball.Models
 {
-    public class BallModel: IEntity, IValueData, IInitializable, IDisposable
+    public class BallModel: IEntity, IValueData, IInitializable, IDisposable, IPositionProvider
     {
         public string Id { get; private set; }
         public Vector3 Position { get; private set; }
