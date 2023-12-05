@@ -5,6 +5,7 @@ using Ball.Models;
 using Base.Interfaces;
 using UniRx;
 using UnityEngine;
+using Utility;
 using Zenject;
 
 namespace Ball.Views
@@ -13,10 +14,12 @@ namespace Ball.Views
     {
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Transform _viewTransform;
+        [SerializeField] private Renderer _renderer;
 
         private BallConfigData _configData;
         private BallModel _model;
         private BallHitController _ballHitController;
+        
 
         public string Id => gameObject.GetInstanceID().ToString();
 
@@ -42,6 +45,10 @@ namespace Ball.Views
                 .RotationAsObservable()
                 .Subscribe(value => _viewTransform.rotation = value)
                 .AddTo(this);
+
+            _model
+                .HitPointsAsObservable()
+                .Subscribe(value => _renderer.material.SetInt(Consts.BallShaderValue, (int)value));
                     
 
 #if UNITY_EDITOR
