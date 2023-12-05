@@ -17,3 +17,13 @@ MonoBehaviour:
       type: 3}
     _sleepThreshold: 37
     _rotationSpeed: 1.5
+    _defaultHitPoints: 128
+    _hitPointsData:
+    - _color: {r: 1, g: 0.3066038, b: 0.3066038, a: 0}
+      _hitPoints: 128
+    - _color: {r: 0.43396664, g: 1, b: 0.21226418, a: 0}
+      _hitPoints: 256
+    - _color: {r: 0.06941971, g: 0.62923205, b: 0.9811321, a: 0}
+      _hitPoints: 512
+    - _color: {r: 0.94870424, g: 0.9528302, b: 0.1033731, a: 0}
+      _hitPoints: 1024
