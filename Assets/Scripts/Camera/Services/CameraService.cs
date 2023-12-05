@@ -2,6 +2,7 @@ using Base.Interfaces;
 using Camera.Interfaces;
 using Camera.Models;
 using UniRx;
+using UnityEngine;
 
 namespace Camera.Services
 {
@@ -9,7 +10,7 @@ namespace Camera.Services
     {
         private readonly CameraModel _cameraModel;
 
-        public CameraService(CameraModel cameraModel)
+        private CameraService(CameraModel cameraModel)
         {
             _cameraModel = cameraModel;
         }
@@ -19,6 +20,13 @@ namespace Camera.Services
             return _cameraModel;
         }
 
+        public void LookAt(Vector3 target)
+        {
+            var forward = target - _cameraModel.Position;
+            var rotation = Quaternion.LookRotation(forward);
+            _cameraModel.UpdateRotation(rotation);
+        }
+        
         public void CreateCamera()
         {
             

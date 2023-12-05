@@ -1,4 +1,5 @@
 using Base.Interfaces;
+using UnityEngine;
 
 namespace Camera.Interfaces
 {
@@ -7,5 +8,6 @@ namespace Camera.Interfaces
         public IPositionProvider GetPositionProvider();
         public void CreateCamera();
         public void DestroyCamera();
+        public void LookAt(Vector3 target);
     }
 }

@@ -7,7 +7,7 @@ namespace Rules.Bootstrap
         public override void InstallBindings()
         {
             Container
-                .BindInterfacesTo<GameRule>()
+                .BindInterfacesTo<DebugGameRule>()
                 .AsSingle()
                 .NonLazy();
         }
