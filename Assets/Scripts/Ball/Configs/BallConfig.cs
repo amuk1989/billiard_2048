@@ -19,9 +19,23 @@ namespace Ball.Configs
         [Range(0, 3)] [SerializeField] private float _rotationSpeed = 1f;
         [Range(0, 1024)] [SerializeField] private uint _defaultHitPoints = 128;
 
+        [Header("View settings")] [SerializeField]
+        private HitPointsPresentData[] _hitPointsData;
+
         public uint SleepThreshold => _sleepThreshold;
         public BallView Prefab => _prefab;
         public float RotationSpeed => _rotationSpeed;
         public uint DefaultHitPoints => _defaultHitPoints;
-    } 
+        public HitPointsPresentData[] HitPointsData => _hitPointsData;
+    }
+
+    [Serializable]
+    public struct HitPointsPresentData
+    {
+        [SerializeField] private Color _color;
+        [SerializeField] private uint _hitPoints;
+        
+        public Color Color => _color;
+        public uint HitPoints => _hitPoints;
+    }
 }

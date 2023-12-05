@@ -20,7 +20,6 @@ namespace Ball.Views
         private BallModel _model;
         private BallHitController _ballHitController;
         
-
         public string Id => gameObject.GetInstanceID().ToString();
 
         [Inject]
@@ -48,7 +47,15 @@ namespace Ball.Views
 
             _model
                 .HitPointsAsObservable()
-                .Subscribe(value => _renderer.material.SetInt(Consts.BallShaderValue, (int)value));
+                .Subscribe(value =>
+                {
+                    foreach (var hitPointsPresentData in _configData.HitPointsData)
+                    {
+                        if (hitPointsPresentData.HitPoints != value) continue;
+                        _renderer.material.SetColor(Consts.BallColor, hitPointsPresentData.Color);
+                    }
+                    _renderer.material.SetInt(Consts.BallShaderValue, (int) value);
+                });
                     
 
 #if UNITY_EDITOR
