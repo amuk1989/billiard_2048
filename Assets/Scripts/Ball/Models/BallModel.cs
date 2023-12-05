@@ -42,6 +42,7 @@ namespace Ball.Models
 
         public void Initialize()
         {
+            _hitPoints.Value = _configData.DefaultHitPoints;
             //TODO: Need to replace to some class
             Observable
                 .EveryUpdate()

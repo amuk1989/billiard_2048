@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Configs/BallConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/BallConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Configs/BallConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Configs/BallConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Models/BallModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Models/BallModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/BallView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/BallView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/Consts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/Consts.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
       <updated>1701694931296</updated>
       <workItem from="1701694937725" duration="4857000" />
       <workItem from="1701710088505" duration="2691000" />
-      <workItem from="1701754273955" duration="1598000" />
+      <workItem from="1701754273955" duration="2425000" />
     </task>
     <servers />
   </component>

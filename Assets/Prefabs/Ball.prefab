@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8880481203490375279}
   _viewTransform: {fileID: 4036199039658267675}
+  _renderer: {fileID: 3025694316338220955}
 --- !u!1 &6410033517902653164
 GameObject:
   m_ObjectHideFlags: 0
