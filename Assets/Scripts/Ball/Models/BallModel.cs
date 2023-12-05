@@ -1,4 +1,5 @@
 ﻿using System;
+using Ball.Configs;
 using Ball.Repositories;
 using Base.Interfaces;
 using UniRx;
@@ -17,17 +18,22 @@ namespace Ball.Models
         private readonly ReactiveProperty<Quaternion> _rotation = new();
 
         private Vector3 _velocity;
+        private Quaternion _viewRotation;
+        private bool _isRotation = false;
+        
         private readonly IPositionProvider _positionProvider;
         private readonly CompositeDisposable _compositeDisposable = new();
+        private readonly BallConfigData _configData;
 
         public uint HitPoints => _hitPoints.Value;
         public Vector3 Velocity => _velocity;
 
-        private BallModel(BallData data)
+        private BallModel(BallData data, BallConfigData configData)
         {
             Id = data.Id;
             Position = data.Position;
             _positionProvider = data.TargetPositionProvider;
+            _configData = configData;
         }
 
         public IObservable<Vector3> ForceAsObservable() => _force.AsObservable();
@@ -36,11 +42,22 @@ namespace Ball.Models
 
         public void Initialize()
         {
+            //TODO: Need to replace to some class
             Observable
                 .EveryUpdate()
                 .Subscribe(_ =>
                 {
-                    _rotation.Value = Quaternion.LookRotation(_positionProvider.Position - Position);
+                    var targetRotation = Quaternion.LookRotation(_positionProvider.Position - Position);
+
+                    _isRotation = _isRotation switch
+                    {
+                        //TODO: need to find some kind of comparison logic.
+                        false when (targetRotation.eulerAngles - _viewRotation.eulerAngles).sqrMagnitude > 0.01 => true,
+                        true when (targetRotation.eulerAngles - _viewRotation.eulerAngles).sqrMagnitude < 0.01 => false,
+                        _ => _isRotation
+                    };
+
+                    if (_isRotation) _rotation.Value = Quaternion.Lerp(_viewRotation, targetRotation, Time.deltaTime * _configData.RotationSpeed);
                 })
                 .AddTo(_compositeDisposable);
         }
@@ -53,6 +70,11 @@ namespace Ball.Models
         public void UpdatePosition(Vector3 position)
         {
             Position = position;
+        }
+        
+        public void UpdateRotation(Quaternion rotation)
+        {
+            _viewRotation = rotation;
         }
 
         public void SetForce(Vector3 force)

@@ -17,8 +17,6 @@ namespace Ball.Views
         private BallConfigData _configData;
         private BallModel _model;
         private BallHitController _ballHitController;
-        private Quaternion _targetRotation = Quaternion.identity;
-        private bool _isRotation;
 
         public string Id => gameObject.GetInstanceID().ToString();
 
@@ -42,10 +40,7 @@ namespace Ball.Views
 
             _model
                 .RotationAsObservable()
-                .Subscribe(value =>
-                {
-                    _targetRotation = value;
-                })
+                .Subscribe(value => _viewTransform.rotation = value)
                 .AddTo(this);
                     
 
@@ -62,18 +57,8 @@ namespace Ball.Views
         private void Update()
         {
             _model.UpdatePosition(transform.position);
+            _model.UpdateRotation(_viewTransform.rotation);
             _model.UpdateVelocity(_rigidbody.velocity);
-
-            if (!_isRotation && (_targetRotation.eulerAngles - transform.rotation.eulerAngles).sqrMagnitude > 0.01)
-            {
-                _isRotation = true;
-            }
-            else if (_isRotation && (_targetRotation.eulerAngles - transform.rotation.eulerAngles).sqrMagnitude < 0.01)
-            {
-                _isRotation = false;
-            }
-            
-            if (_isRotation) transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * _configData.RotationSpeed);
         }
 
         private void OnCollisionEnter(Collision collision)
