@@ -6,8 +6,8 @@ namespace Ball.Data
     public struct BallViewData: IValueData
     {
         public string Id { get; }
-        public BallModel BallModel;
-        internal BallViewModel BallViewModel;
+        public readonly BallModel BallModel;
+        internal readonly BallViewModel BallViewModel;
 
         internal BallViewData(BallViewModel ballViewModel, BallModel ballModel, string id)
         {
