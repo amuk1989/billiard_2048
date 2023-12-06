@@ -1,5 +1,6 @@
 using System;
 using Camera.Models;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -15,9 +16,27 @@ namespace Camera.Views
             _cameraModel = cameraModel;
         }
 
-        private void Update()
+        private void Awake()
         {
+            _cameraModel.UpdateSightDirection(transform.forward);
             _cameraModel.UpdatePosition(transform.position);
+        }
+
+        private void Start()
+        {
+            _cameraModel
+                .RotationAsObservable()
+                .Subscribe(value =>
+                {
+                    transform.rotation = value;
+                    _cameraModel.UpdateSightDirection(transform.forward);
+                })
+                .AddTo(this);
+
+            _cameraModel
+                .PositionAsObservable()
+                .Subscribe(value => transform.position = value)
+                .AddTo(this);
         }
 
         public void Dispose()

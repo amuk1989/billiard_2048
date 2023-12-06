@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Ball.Interfaces;
 using Ball.Models;
 using Ball.Repositories;
+using Base.Interfaces;
 using Camera.Interfaces;
 using UnityEngine;
 using UniRx;
@@ -50,5 +51,7 @@ namespace Ball.Services
             _currentBall?.SetForce(force);
             _currentBall = null;
         }
+
+        public IPositionProvider GetMainBallAsPosition() => _currentBall;
     }
 }

@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Configs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Configs/CameraConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Configs/CameraConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/CameraRule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/CameraRule.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ball.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ball.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Configs/BallConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Configs/BallConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/BallView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/BallView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/Shaders/DigitShader.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Views/Shaders/DigitShader.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utility/Consts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utility/Consts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BallShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/BallShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/ConfigRegistry.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/ConfigRegistry.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Bootstrap/CameraInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Bootstrap/CameraInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Controllers/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Controllers/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Interfaces/ICameraService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Interfaces/ICameraService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Models/CameraModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Models/CameraModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Services/CameraService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Services/CameraService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Views/CameraComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Views/CameraComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/Interface/IInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Interface/IInputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/Services/InputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Services/InputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/ConfigRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/ConfigRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rules/Bootstrap/RulesInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/Bootstrap/RulesInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rules/DebugGameRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/DebugGameRule.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +96,9 @@
       <workItem from="1701694937725" duration="4857000" />
       <workItem from="1701710088505" duration="2691000" />
       <workItem from="1701754273955" duration="3227000" />
-      <workItem from="1701771795098" duration="3075000" />
+      <workItem from="1701771795098" duration="14782000" />
+      <workItem from="1701858384138" duration="10822000" />
+      <workItem from="1701875305851" duration="1014000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,4 @@
+using Camera.Controllers;
 using Camera.Models;
 using Camera.Services;
 using Zenject;
@@ -15,6 +16,11 @@ namespace Camera.Bootstrap
 
             Container
                 .BindInterfacesTo<CameraService>()
+                .AsSingle()
+                .NonLazy();
+
+            Container
+                .Bind<CameraController>()
                 .AsSingle()
                 .NonLazy();
         }

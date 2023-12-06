@@ -8,12 +8,13 @@ using Zenject;
 
 namespace Ball.Models
 {
-    public class BallModel: IEntity, IValueData, IInitializable, IDisposable
+    public class BallModel: IEntity, IValueData, IInitializable, IDisposable, IPositionProvider
     {
         public string Id { get; private set; }
-        public Vector3 Position { get; private set; }
+        public Vector3 Position => _position.Value;
 
         private readonly ReactiveCommand<Vector3> _force = new();
+        private readonly ReactiveProperty<Vector3> _position = new();
         private readonly ReactiveProperty<uint> _hitPoints = new();
         private readonly ReactiveProperty<Quaternion> _rotation = new();
 
@@ -31,7 +32,7 @@ namespace Ball.Models
         private BallModel(BallData data, BallConfigData configData)
         {
             Id = data.Id;
-            Position = data.Position;
+            _position.Value = data.Position;
             _positionProvider = data.TargetPositionProvider;
             _configData = configData;
         }
@@ -39,6 +40,7 @@ namespace Ball.Models
         public IObservable<Vector3> ForceAsObservable() => _force.AsObservable();
         public IObservable<uint> HitPointsAsObservable() => _hitPoints.AsObservable();
         public IObservable<Quaternion> RotationAsObservable() => _rotation.AsObservable();
+        public IObservable<Vector3> PositionAsObservable() => _position.AsObservable();
 
         public void Initialize()
         {
@@ -70,7 +72,7 @@ namespace Ball.Models
         
         public void UpdatePosition(Vector3 position)
         {
-            Position = position;
+            _position.Value = position;
         }
         
         public void UpdateRotation(Quaternion rotation)
