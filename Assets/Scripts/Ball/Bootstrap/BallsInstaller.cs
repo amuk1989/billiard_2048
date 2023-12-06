@@ -1,9 +1,9 @@
 ﻿using Ball.Configs;
-using Ball.Controllers;
 using Ball.Data;
 using Ball.Models;
 using Ball.Repositories;
 using Ball.Services;
+using Ball.Utilities;
 using Ball.Views;
 using Base.Interfaces;
 using Zenject;
@@ -38,7 +38,7 @@ namespace Ball.Bootstrap
                 .NonLazy();
 
             Container
-                .BindInterfacesAndSelfTo<BallHitController>()
+                .BindInterfacesAndSelfTo<BallHitUtility>()
                 .AsSingle()
                 .NonLazy();
 

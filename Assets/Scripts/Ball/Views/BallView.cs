@@ -1,8 +1,8 @@
 using System;
 using Ball.Configs;
-using Ball.Controllers;
 using Ball.Data;
 using Ball.Models;
+using Ball.Utilities;
 using Base.Interfaces;
 using UniRx;
 using UnityEngine;
@@ -20,17 +20,17 @@ namespace Ball.Views
         private BallConfigData _configData;
         private BallModel _model;
         private BallViewModel _ballViewModel;
-        private BallHitController _ballHitController;
+        private BallHitUtility _ballHitUtility;
         
         public string Id => gameObject.GetInstanceID().ToString();
 
         [Inject]
-        private void Construct(BallViewData data, BallConfigData configData, BallHitController ballHitController)
+        private void Construct(BallViewData data, BallConfigData configData, BallHitUtility ballHitUtility)
         {
             _configData = configData;
             _model = data.BallModel;
             _ballViewModel = data.BallViewModel;
-            _ballHitController = ballHitController;
+            _ballHitUtility = ballHitUtility;
         }
 
         private void Start()
@@ -75,13 +75,14 @@ namespace Ball.Views
         {
             _ballViewModel.UpdatePosition(transform.position);
             _ballViewModel.UpdateRotation(_viewTransform.rotation);
+            
             _model.UpdateVelocity(_rigidbody.velocity);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
             if(!collision.gameObject.TryGetComponent<BallView>(out var collisionBall)) return;
-            _ballHitController.OnHit(_model, collisionBall._model);
+            _ballHitUtility.OnHit(_model, collisionBall._model);
         }
     }
 }

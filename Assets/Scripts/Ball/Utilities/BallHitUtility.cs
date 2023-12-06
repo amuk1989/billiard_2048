@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using Ball.Models;
+﻿using Ball.Models;
 using Ball.Repositories;
-using UniRx;
-using Zenject;
 
-namespace Ball.Controllers
+namespace Ball.Utilities
 {
-    internal class BallHitController
+    internal class BallHitUtility
     {
         private readonly BallModelRepository _ballModelRepository;
 
-        public BallHitController(BallModelRepository ballModelRepository)
+        public BallHitUtility(BallModelRepository ballModelRepository)
         {
             _ballModelRepository = ballModelRepository;
         }
@@ -19,25 +15,22 @@ namespace Ball.Controllers
         public void OnHit(BallModel model, BallModel hitModel)
         {
             if (model.HitPoints != hitModel.HitPoints) return;
-            
-            BallModel destroyBallModel;
-            BallModel upgradeBallModel;
-            
+
             if (model.Velocity.sqrMagnitude >= hitModel.Velocity.sqrMagnitude)
             {
-                destroyBallModel = hitModel;
-                upgradeBallModel = model;
+                UpdateBalls(hitModel, model);
             }
             else
             {
-                destroyBallModel = model;
-                upgradeBallModel = hitModel;
+                UpdateBalls(model, hitModel);
             }
-            
+        }
+
+        private void UpdateBalls(BallModel destroyBallModel, BallModel upgradeBallModel)
+        {
             upgradeBallModel.UpgradeHitPoints(destroyBallModel.HitPoints);
             
             _ballModelRepository.Remove(destroyBallModel.Id);
-            
         }
     }
 }
