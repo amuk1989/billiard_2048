@@ -1,6 +1,7 @@
 ﻿using System;
 using Base.Data;
 using Base.Interfaces;
+using GameArea.Views;
 using UnityEngine;
 
 namespace GameArea.Data

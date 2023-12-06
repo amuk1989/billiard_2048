@@ -1,5 +1,6 @@
 ﻿using GameArea.Data;
 using GameArea.Services;
+using GameArea.Views;
 using Zenject;
 
 namespace GameArea.Bootstrap

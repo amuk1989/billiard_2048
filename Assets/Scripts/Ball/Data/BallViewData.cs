@@ -6,14 +6,14 @@ namespace Ball.Data
     public struct BallViewData: IValueData
     {
         public string Id { get; }
-        public BallModel BallModel;
-        public IPositionProvider TargetPosition;
+        public readonly BallModel BallModel;
+        internal readonly BallViewModel BallViewModel;
 
-        public BallViewData(BallModel ballModel, IPositionProvider targetPosition, string id)
+        internal BallViewData(BallViewModel ballViewModel, BallModel ballModel, string id)
         {
             BallModel = ballModel;
-            TargetPosition = targetPosition;
             Id = id;
+            BallViewModel = ballViewModel;
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Threading.Tasks;
+using Ball.Data;
 using Ball.Interfaces;
 using Ball.Models;
 using Ball.Repositories;
 using Base.Interfaces;
 using Camera.Interfaces;
 using UnityEngine;
-using UniRx;
 using Zenject;
 
 namespace Ball.Services
@@ -52,6 +51,6 @@ namespace Ball.Services
             _currentBall = null;
         }
 
-        public IPositionProvider GetMainBallAsPosition() => _currentBall;
+        public IPositionProvider GetMainBallPositionProvider() => _currentBall;
     }
 }

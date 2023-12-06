@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace GameArea
+namespace GameArea.Views
 {
     public class GameAreaView: MonoBehaviour, IDisposable
     {

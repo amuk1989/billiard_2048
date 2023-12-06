@@ -9,6 +9,6 @@ namespace Ball.Interfaces
         public void Spawn(Vector3 position);
         public void ClearAll();
         public void SetForce(Vector3 force);
-        public IPositionProvider GetMainBallAsPosition();
+        public IPositionProvider GetMainBallPositionProvider();
     }
 }
