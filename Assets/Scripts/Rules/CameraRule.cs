@@ -24,9 +24,9 @@ namespace Rules
 
         public async void Initialize()
         {
-            await UniTask.WaitUntil(() => _ballService.GetMainBallAsPosition() != null);
+            await UniTask.WaitUntil(() => _ballService.GetMainBallPositionProvider() != null);
             
-            _cameraService.LookAt(_ballService.GetMainBallAsPosition().Position);
+            _cameraService.LookAt(_ballService.GetMainBallPositionProvider().Position);
             
             _inputService
                 .CursorPositionAsObservable()

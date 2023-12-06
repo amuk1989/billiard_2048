@@ -51,6 +51,6 @@ namespace Ball.Services
             _currentBall = null;
         }
 
-        public IPositionProvider GetMainBallAsPosition() => _currentBall;
+        public IPositionProvider GetMainBallPositionProvider() => _currentBall;
     }
 }
