@@ -1,6 +1,7 @@
 using System;
 using Ball.Configs;
 using Ball.Controllers;
+using Ball.Data;
 using Ball.Models;
 using Base.Interfaces;
 using UniRx;
@@ -18,15 +19,17 @@ namespace Ball.Views
 
         private BallConfigData _configData;
         private BallModel _model;
+        private BallViewModel _ballViewModel;
         private BallHitController _ballHitController;
         
         public string Id => gameObject.GetInstanceID().ToString();
 
         [Inject]
-        private void Construct(BallModel model, BallConfigData configData, BallHitController ballHitController)
+        private void Construct(BallViewData data, BallConfigData configData, BallHitController ballHitController)
         {
             _configData = configData;
-            _model = model;
+            _model = data.BallModel;
+            _ballViewModel = data.BallViewModel;
             _ballHitController = ballHitController;
         }
 
@@ -40,7 +43,7 @@ namespace Ball.Views
                 .Subscribe(force => _rigidbody.AddForce(force))
                 .AddTo(this);
 
-            _model
+            _ballViewModel
                 .RotationAsObservable()
                 .Subscribe(value => _viewTransform.rotation = value)
                 .AddTo(this);
@@ -70,8 +73,8 @@ namespace Ball.Views
 
         private void Update()
         {
-            _model.UpdatePosition(transform.position);
-            _model.UpdateRotation(_viewTransform.rotation);
+            _ballViewModel.UpdatePosition(transform.position);
+            _ballViewModel.UpdateRotation(_viewTransform.rotation);
             _model.UpdateVelocity(_rigidbody.velocity);
         }
 

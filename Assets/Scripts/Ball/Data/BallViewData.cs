@@ -7,13 +7,13 @@ namespace Ball.Data
     {
         public string Id { get; }
         public BallModel BallModel;
-        public IPositionProvider TargetPosition;
+        internal BallViewModel BallViewModel;
 
-        public BallViewData(BallModel ballModel, IPositionProvider targetPosition, string id)
+        internal BallViewData(BallViewModel ballViewModel, BallModel ballModel, string id)
         {
             BallModel = ballModel;
-            TargetPosition = targetPosition;
             Id = id;
+            BallViewModel = ballViewModel;
         }
     }
 }

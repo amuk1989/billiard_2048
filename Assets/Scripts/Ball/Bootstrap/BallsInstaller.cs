@@ -1,9 +1,11 @@
 ﻿using Ball.Configs;
 using Ball.Controllers;
+using Ball.Data;
 using Ball.Models;
 using Ball.Repositories;
 using Ball.Services;
 using Ball.Views;
+using Base.Interfaces;
 using Zenject;
 
 namespace Ball.Bootstrap
@@ -44,7 +46,10 @@ namespace Ball.Bootstrap
                 .BindFactory<BallData, BallModel, PlaceholderFactory<BallData, BallModel>>();
             
             Container
-                .BindFactory<BallModel, BallView, PlaceholderFactory<BallModel, BallView>>()
+                .BindFactory<BallModel, BallViewModel, BallViewModel.Factory>();
+            
+            Container
+                .BindFactory<BallViewData, BallView, PlaceholderFactory<BallViewData, BallView>>()
                 .FromComponentInNewPrefab(_ballConfigData.Prefab);
         }
     }
