@@ -1,5 +1,6 @@
 ﻿using System;
 using Ball.Configs;
+using Ball.Data;
 using Ball.Repositories;
 using Base.Interfaces;
 using UniRx;
