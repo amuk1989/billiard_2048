@@ -9,6 +9,8 @@ namespace Camera.Models
     {
         private readonly ReactiveProperty<Vector3> _cameraPosition = new();
         private readonly ReactiveProperty<Quaternion> _cameraRotation = new();
+
+        private Vector3 _sightDirection;
         
         public IObservable<Vector3> PositionAsObservable()
         {
@@ -21,6 +23,8 @@ namespace Camera.Models
         }
 
         public Vector3 Position => _cameraPosition.Value;
+        public Quaternion Rotation => _cameraRotation.Value;
+        public Vector3 SightDirection => _sightDirection;
 
         public void UpdatePosition(Vector3 position)
         {
@@ -30,6 +34,11 @@ namespace Camera.Models
         public void UpdateRotation(Quaternion rotation)
         {
             _cameraRotation.Value = rotation;
+        }
+
+        public void UpdateSightDirection(Vector3 forward)
+        {
+            _sightDirection = forward;
         }
     }
 }

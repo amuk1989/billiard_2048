@@ -10,6 +10,11 @@ namespace Rules.Bootstrap
                 .BindInterfacesTo<DebugGameRule>()
                 .AsSingle()
                 .NonLazy();
+            
+            Container
+                .BindInterfacesTo<CameraRule>()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }

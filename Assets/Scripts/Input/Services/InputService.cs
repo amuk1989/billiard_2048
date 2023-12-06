@@ -16,6 +16,7 @@ namespace Input.Services
 
         public IObservable<Vector2> CursorPositionAsObservable() => _cursorPosition.AsObservable();
         public IObservable<TapStatus> TapStatusAsObservable() => _tapStatus.AsObservable();
+        public TapStatus TapStatus => _tapStatus.Value;
 
         public void StartTrackInput()
         {

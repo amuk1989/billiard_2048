@@ -26,35 +26,9 @@ namespace Rules
 
         public async void Initialize()
         {
-            _ballService.Spawn(Vector3.zero);
+            _ballService.Spawn(Vector3.up);
 
-            await UniTask.Delay(1000);
-            
-            var ball = _ballService.GetMainBallAsPosition();
-            if (ball == null) return;
-            _cameraService.LookAt(ball.Position);
-            
             _inputService.StartTrackInput();
-            
-            _inputService
-                .CursorPositionAsObservable()
-                .Subscribe(value =>
-                {
-                    Debug.Log($"[GameRule] {value}");
-                })
-                .AddTo(_compositeDisposable);
-            
-            _inputService
-                .TapStatusAsObservable()
-                .Subscribe(value =>
-                {
-                    Debug.Log($"[GameRule] {value}");
-                    
-                    var ball = _ballService.GetMainBallAsPosition();
-                    if (ball == null) return;
-                    _cameraService.LookAt(ball.Position);
-                })
-                .AddTo(_compositeDisposable);
         }
 
         public void Dispose()

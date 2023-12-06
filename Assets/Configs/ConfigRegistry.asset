@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballConfig: {fileID: 11400000, guid: 222786df14c9ae145abeb4f8a2ae7449, type: 2}
   _gameAreaConfig: {fileID: 11400000, guid: 4ec53e6656a1bd04a928aaed7388e7d6, type: 2}
+  _cameraConfigData: {fileID: 11400000, guid: f66e6a7d4e6b7b745816085fae6e9322, type: 2}

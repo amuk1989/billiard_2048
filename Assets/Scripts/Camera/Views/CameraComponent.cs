@@ -16,17 +16,27 @@ namespace Camera.Views
             _cameraModel = cameraModel;
         }
 
+        private void Awake()
+        {
+            _cameraModel.UpdateSightDirection(transform.forward);
+            _cameraModel.UpdatePosition(transform.position);
+        }
+
         private void Start()
         {
             _cameraModel
                 .RotationAsObservable()
-                .Subscribe(value => transform.rotation = value)
+                .Subscribe(value =>
+                {
+                    transform.rotation = value;
+                    _cameraModel.UpdateSightDirection(transform.forward);
+                })
                 .AddTo(this);
-        }
 
-        private void Update()
-        {
-            _cameraModel.UpdatePosition(transform.position);
+            _cameraModel
+                .PositionAsObservable()
+                .Subscribe(value => transform.position = value)
+                .AddTo(this);
         }
 
         public void Dispose()
