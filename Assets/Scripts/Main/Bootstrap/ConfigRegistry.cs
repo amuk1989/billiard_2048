@@ -1,7 +1,6 @@
 ﻿using Ball.Configs;
-using Base.Data;
-using Base.Interfaces;
 using Camera.Configs;
+using Cue.Configs;
 using GameArea.Data;
 using UnityEngine;
 using Utility;
@@ -15,12 +14,14 @@ namespace Main.Bootstrap
         [SerializeField] private BallConfig _ballConfig;
         [SerializeField] private GameAreaConfig _gameAreaConfig;
         [SerializeField] private CameraConfig _cameraConfigData;
+        [SerializeField] private CueConfig _cueConfig;
             
         public override void InstallBindings()
         {
             Container.InstallRegistry(_ballConfig.Data);
             Container.InstallRegistry(_gameAreaConfig.Data);
             Container.InstallRegistry(_cameraConfigData.Data);
+            Container.InstallRegistry(_cueConfig.Data);
         }
     }
 }

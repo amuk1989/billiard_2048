@@ -12,19 +12,17 @@ namespace Rules
     public class DebugGameRule: IInitializable, IDisposable
     {
         private readonly IInputService _inputService;
-        private readonly ICameraService _cameraService;
         private readonly IBallService _ballService;
         
         private readonly CompositeDisposable _compositeDisposable = new();
 
-        public DebugGameRule(IInputService inputService, ICameraService cameraService, IBallService ballService)
+        public DebugGameRule(IInputService inputService, IBallService ballService)
         {
             _inputService = inputService;
-            _cameraService = cameraService;
             _ballService = ballService;
         }
 
-        public async void Initialize()
+        public void Initialize()
         {
             _ballService.Spawn(Vector3.up);
 
