@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Base.Interfaces
 {
-    public interface IHitProvider
+    public interface IHitting
     {
         public IObservable<Vector3> OnHitAsObservable();
+        public IObservable<float> EnergyAsObservable();
         public void UpdateEnergy(float energy);
     }
 }
