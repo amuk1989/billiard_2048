@@ -9,5 +9,7 @@ namespace Cue.Interfaces
         public void Deactivate();
         public void SetTarget(Vector3 target);
         public void SetHandler(IPositionProvider handler);
+        public IHitProvider GetHitProvider();
+        public void Hit();
     }
 }

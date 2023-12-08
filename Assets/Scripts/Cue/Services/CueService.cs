@@ -38,5 +38,15 @@ namespace Cue.Services
         {
             _model.SetPositionHandler(handler);
         }
+
+        public IHitProvider GetHitProvider()
+        {
+            return _model;
+        }
+
+        public void Hit()
+        {
+            _model.Hit();
+        }
     }
 }

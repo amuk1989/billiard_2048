@@ -47,6 +47,7 @@ namespace Ball.Services
 
         public void SetForce(Vector3 force)
         {
+            Debug.Log(force);
             _currentBall?.SetForce(force);
             _currentBall = null;
         }

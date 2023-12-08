@@ -6,6 +6,7 @@ using Cysharp.Threading.Tasks;
 using Input.Interface;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Zenject;
 
 namespace Rules
@@ -39,6 +40,25 @@ namespace Rules
             _cueService.Activate();
             _cueService.SetHandler(_cameraService.GetPositionProvider());
             _cueService.SetTarget(_ballService.GetMainBallPositionProvider().Position);
+
+            var hitProvider = _cueService.GetHitProvider();
+
+            _inputService
+                .CursorPositionAsObservable()
+                .Where(x => _inputService.TapStatus == TapStatus.OnDrag && Mathf.Abs(x.y) > 0.01f)
+                .Subscribe(value => hitProvider.UpdateEnergy(-value.y))
+                .AddTo(_compositeDisposable);
+            
+            _inputService
+                .TapStatusAsObservable()
+                .Where(x => x == TapStatus.OnRelease)
+                .Subscribe(value => _cueService.Hit())
+                .AddTo(_compositeDisposable);
+            
+            hitProvider
+                .OnHitAsObservable()
+                .Subscribe(value => _ballService.SetForce(-value))
+                .AddTo(_compositeDisposable);
         }
 
         public void Dispose()
