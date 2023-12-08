@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Configs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Configs/CueConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Configs/CueConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Views.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Views/CueView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Views/CueView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Interfaces/IHitProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Interfaces/IHitProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Controllers.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Bootstrap/CueInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Bootstrap/CueInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Interfaces/ICueService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Interfaces/ICueService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/ConfigRegistry.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/ConfigRegistry.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Configs/CueConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Configs/CueConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Models/CueModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Models/CueModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Services/CueService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Services/CueService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/ConfigRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/ConfigRegistry.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rules/DebugGameRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/DebugGameRule.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +90,8 @@
       <workItem from="1701771795098" duration="14782000" />
       <workItem from="1701858384138" duration="10822000" />
       <workItem from="1701875305851" duration="7863000" />
-      <workItem from="1701948831392" duration="8213000" />
+      <workItem from="1701948831392" duration="11562000" />
+      <workItem from="1702019244220" duration="3548000" />
     </task>
     <servers />
   </component>

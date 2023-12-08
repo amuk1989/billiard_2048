@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Cue.Configs
 {
     [CreateAssetMenu(fileName = "CueConfig", menuName = "Configs/CueConfig", order = 0)]
-    public class CueConfig : BaseConfig<IConfigData>
+    public class CueConfig : BaseConfig<CueConfigData>
     {
     }
 
@@ -15,7 +15,9 @@ namespace Cue.Configs
     public class CueConfigData : IConfigData
     {
         [SerializeField] private CueView _prefab;
+        [SerializeField] private Vector3 _viewOffset;
 
         internal CueView Prefab => _prefab;
+        public Vector3 ViewOffset => _viewOffset;
     }
 }
