@@ -1,4 +1,5 @@
 ﻿using Base.Interfaces;
+using Cue.Controllers;
 using Cue.Interfaces;
 using Cue.Models;
 using Cue.Views;
@@ -9,14 +10,16 @@ namespace Cue.Services
     internal class CueService: ICueService
     {
         private readonly CueModel _model;
+        private readonly CueController _controller;
         private readonly CueView.Factory _factory;
         
         private CueView _view;
 
-        public CueService(CueModel model, CueView.Factory factory)
+        public CueService(CueModel model, CueView.Factory factory, CueController controller)
         {
             _model = model;
             _factory = factory;
+            _controller = controller;
         }
 
         public void Activate()
@@ -36,7 +39,7 @@ namespace Cue.Services
 
         public void SetHandler(IPositionProvider handler)
         {
-            _model.SetPositionHandler(handler);
+            _controller.SetTargetHandler(handler);
         }
 
         public IHitting GetHitProvider()
@@ -46,7 +49,12 @@ namespace Cue.Services
 
         public void Hit()
         {
-            _model.Hit();
+            _controller.Hit();
+        }
+
+        public void UpdateEnergy(float increment)
+        {
+            _controller.UpdateEnergy(increment);
         }
     }
 }

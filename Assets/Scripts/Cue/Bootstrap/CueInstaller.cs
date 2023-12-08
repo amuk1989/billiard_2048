@@ -1,4 +1,5 @@
 ﻿using Cue.Configs;
+using Cue.Controllers;
 using Cue.Models;
 using Cue.Services;
 using Cue.Views;
@@ -14,6 +15,11 @@ namespace Cue.Bootstrap
         {
             Container
                 .BindInterfacesAndSelfTo<CueService>()
+                .AsSingle()
+                .NonLazy();
+            
+            Container
+                .Bind<CueController>()
                 .AsSingle()
                 .NonLazy();
             

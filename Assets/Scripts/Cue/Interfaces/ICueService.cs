@@ -11,5 +11,6 @@ namespace Cue.Interfaces
         public void SetHandler(IPositionProvider handler);
         public IHitting GetHitProvider();
         public void Hit();
+        public void UpdateEnergy(float increment);
     }
 }

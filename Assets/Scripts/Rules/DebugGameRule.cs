@@ -46,7 +46,7 @@ namespace Rules
             _inputService
                 .CursorPositionAsObservable()
                 .Where(x => _inputService.TapStatus == TapStatus.OnDrag && Mathf.Abs(x.y) > 0.01f)
-                .Subscribe(value => hitProvider.UpdateEnergy(-value.y * 100))
+                .Subscribe(value => _cueService.UpdateEnergy(-value.y))
                 .AddTo(_compositeDisposable);
             
             _inputService
@@ -57,7 +57,7 @@ namespace Rules
             
             hitProvider
                 .OnHitAsObservable()
-                .Subscribe(value => _ballService.SetForce(-value))
+                .Subscribe(value => _ballService.SetForce(-value*100))
                 .AddTo(_compositeDisposable);
         }
 

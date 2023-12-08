@@ -7,6 +7,5 @@ namespace Base.Interfaces
     {
         public IObservable<Vector3> OnHitAsObservable();
         public IObservable<float> EnergyAsObservable();
-        public void UpdateEnergy(float energy);
     }
 }
