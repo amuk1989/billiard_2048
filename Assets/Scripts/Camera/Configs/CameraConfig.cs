@@ -16,8 +16,10 @@ namespace Camera.Configs
     {
         [Range(0,20)][SerializeField] private float _cameraMovingSpeed;
         [Range(0,2)][SerializeField] private float _cameraRotationSpeed;
+        [Range(0, 1)] [SerializeField] private float _cameraInputSensitivity;
 
         public float CameraMovingSpeed => _cameraMovingSpeed;
         public float CameraRotationSpeed => _cameraRotationSpeed;
+        public float CameraInputSensitivity => _cameraInputSensitivity;
     }
 }

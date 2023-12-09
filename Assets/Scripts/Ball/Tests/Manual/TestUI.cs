@@ -37,7 +37,7 @@ namespace Ball.Tests.Manual
 
         private void OnForceClick()
         {
-            _ballService.SetForce(Vector3.forward * 1000);
+            // _ballService.SetForce(Vector3.forward * 1000);
         }
 
         private void OnDestroy()

@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Interfaces/IBallService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Interfaces/IBallService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball/Services/BallService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball/Services/BallService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rules/CameraRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/CameraRule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rules/DebugGameRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/DebugGameRule.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +15,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8a522b806eac9bb894e6e4c5fe87f353457535e769447e79c6b396beecb5d0/System.Threading.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Interfaces/IHitting.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +86,12 @@
       <workItem from="1701754273955" duration="3227000" />
       <workItem from="1701771795098" duration="14782000" />
       <workItem from="1701858384138" duration="10822000" />
-      <workItem from="1701875305851" duration="6991000" />
+      <workItem from="1701875305851" duration="7863000" />
+      <workItem from="1701948831392" duration="11562000" />
+      <workItem from="1702019244220" duration="11371000" />
+      <workItem from="1702040098007" duration="11437000" />
+      <workItem from="1702061171489" duration="1894000" />
+      <workItem from="1702109338693" duration="5864000" />
     </task>
     <servers />
   </component>

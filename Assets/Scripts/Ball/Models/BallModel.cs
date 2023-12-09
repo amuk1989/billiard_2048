@@ -52,6 +52,7 @@ namespace Ball.Models
 
         public void SetForce(Vector3 force)
         {
+            Debug.Log(force);
             _force.Execute(force);
         }
 
