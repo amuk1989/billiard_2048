@@ -1,8 +1,6 @@
 using Base.Interfaces;
 using Camera.Controllers;
 using Camera.Interfaces;
-using Camera.Models;
-using UniRx;
 using UnityEngine;
 
 namespace Camera.Services

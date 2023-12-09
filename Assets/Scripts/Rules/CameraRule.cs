@@ -30,6 +30,7 @@ namespace Rules
             
             _inputService
                 .CursorPositionAsObservable()
+                .Where(x => _inputService.TapStatus == TapStatus.OnDrag)
                 .Subscribe(value =>
                 {
                     if (_inputService.TapStatus != TapStatus.OnDrag) return;

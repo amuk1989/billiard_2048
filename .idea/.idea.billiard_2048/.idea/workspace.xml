@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Configs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Configs/InputConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Configs/InputConfig.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Configs/CueConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/CueConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Controllers/CueController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Controllers/CueController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cue/Models/CueModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cue/Models/CueModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configs/ConfigRegistry.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/ConfigRegistry.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Configs/CameraConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Configs/CameraConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Services/CameraService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Services/CameraService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/Services/InputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/Services/InputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/ConfigRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Main/Bootstrap/ConfigRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rules/CameraRule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rules/CameraRule.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +99,7 @@
       <workItem from="1702019244220" duration="11371000" />
       <workItem from="1702040098007" duration="11437000" />
       <workItem from="1702061171489" duration="1894000" />
-      <workItem from="1702109338693" duration="3041000" />
+      <workItem from="1702109338693" duration="5654000" />
     </task>
     <servers />
   </component>
