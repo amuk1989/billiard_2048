@@ -45,7 +45,7 @@ namespace Rules
 
             _inputService
                 .CursorPositionAsObservable()
-                .Where(x => _inputService.TapStatus == TapStatus.OnDrag && Mathf.Abs(x.y) > 0.01f)
+                .Where(x => _inputService.TapStatus == TapStatus.OnDrag && Mathf.Abs(x.x) < 0.01f)
                 .Subscribe(value => _cueService.UpdateEnergy(-value.y))
                 .AddTo(_compositeDisposable);
             
