@@ -36,7 +36,6 @@ namespace Cue.Models
 
         public void SetTarget(Vector3 target) => _target.Value = target;
         public void SetEnergy(float energy) => _potentialEnergy.Value = energy;
-
         public void SetPosition(Vector3 position) => _position.Value = position;
 
         public void Hit()

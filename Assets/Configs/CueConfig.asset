@@ -16,7 +16,7 @@ MonoBehaviour:
     _prefab: {fileID: 5197959015461446041, guid: 972e3c537cd03c94d8d23cf46efe4338,
       type: 3}
     _viewOffset: {x: 0, y: -1, z: 0}
-    _maxMoving: 0
+    _maxMoving: 500
     _hitMoving: 0
     _minEnergy: 1
     _maxEnergy: 1000

@@ -18,10 +18,14 @@ namespace Cue.Controllers
         private IPositionProvider _positionProvider;
         private CancellationTokenSource _energyUpdateToken;
 
+        private readonly float _movingEnergyRatio;
+
         private CueController(CueModel model, CueConfigData configData)
         {
             _model = model;
             _configData = configData;
+
+            _movingEnergyRatio = _configData.MaxMoving / _configData.MaxEnergy;
         }
 
         public void SetTargetHandler(IPositionProvider positionProvider)
@@ -33,12 +37,12 @@ namespace Cue.Controllers
                 .PositionAsObservable()
                 .Select(x =>
                 {
-                    var powerDirection = (_model.Position - _model.Target).normalized * _model.Energy;
+                    var powerDirection = (_model.Position - _model.Target).normalized * _model.Energy * _movingEnergyRatio;
                     return x + _configData.ViewOffset + powerDirection;
                 })
                 .Merge(_model.EnergyAsObservable().Select(x =>
                 {
-                    var powerDirection = (_model.Position - _model.Target).normalized * x;
+                    var powerDirection = (_model.Position - _model.Target).normalized * x * _movingEnergyRatio;
                     return _positionProvider.Position + _configData.ViewOffset + powerDirection;
                 } ))
                 .Subscribe(_model.SetPosition);
@@ -70,15 +74,15 @@ namespace Cue.Controllers
         private UniTask UpdateEnergyTask(float targetValue, float speed, CancellationToken token = default)
         {
             var startValue = _model.Energy;
-            var t = 0f;
+            var t = Mathf.PI * 0.5f;
             
             return UniTask
                 .WaitUntil(() =>
                 {
-                    t += Time.deltaTime * speed;
-                    _model.SetEnergy(Mathf.Lerp(startValue, targetValue, t));
+                    t -= Time.deltaTime * speed;
+                    _model.SetEnergy(Mathf.Lerp(startValue, targetValue, Mathf.Cos(t)));
                     
-                    return t >= 1.0f;
+                    return t < 0f;
                 }, cancellationToken: token);
         }
         
