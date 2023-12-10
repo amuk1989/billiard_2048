@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f19c8-b74e-4968-82db-3ad68f45467a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/StructureCreator/StructureCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/StructureCreator/StructureCreator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/StructureCreator/StructureWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/StructureCreator/StructureWindow.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.billiard_2048/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Configs/CueConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/CueConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Configs/InputConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/InputConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StructureCreator.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/StructureCreator.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StructureCreator/StructureCreator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/StructureCreator/StructureCreator.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8a522b806eac9bb894e6e4c5fe87f353457535e769447e79c6b396beecb5d0/System.Threading.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e279d988b9d4542841de511fbfdf8c294ae00/af/fd1d68df/EditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Interfaces/IHitting.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -46,7 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "supports",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -121,7 +123,7 @@
       <workItem from="1702109338693" duration="11265000" />
       <workItem from="1702215625678" duration="851000" />
       <workItem from="1702217952921" duration="12000" />
-      <workItem from="1702217980049" duration="1214000" />
+      <workItem from="1702217980049" duration="4347000" />
     </task>
     <servers />
   </component>
