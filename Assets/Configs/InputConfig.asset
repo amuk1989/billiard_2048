@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: InputConfig
   m_EditorClassIdentifier: 
   _data:
-    _inputSensitivity: 0.1
+    _inputSensitivity: 1
