@@ -19,7 +19,8 @@ namespace Plugins.StructureCreator
             {"Interfaces", true},
         };
         
-        List<string> _menuNames = new List<string>();
+        private readonly List<string> _menuNames = new List<string>();
+        private string _moduleName = "SomeModule";
         
         [MenuItem("Assets/Create/Custom/Default folder Structure", false, 1)]
         private static void CreateDefaultModuleStructure()
@@ -30,25 +31,46 @@ namespace Plugins.StructureCreator
         private void OnGUI () 
         {
             GUILayout.Label ("Module structure settings", EditorStyles.boldLabel);
-            
-            var name = EditorGUILayout.TextField ("Module name", string.Empty);
-            _menuNames.Clear();
 
             foreach (var menuItem in DefaultMenuNames)
             {
-                if (EditorGUILayout.Toggle(menuItem.Key, menuItem.Value)) _menuNames.Add(menuItem.Key);
+                if (EditorGUILayout.Toggle(menuItem.Key, _menuNames.Contains(menuItem.Key)))
+                {
+                    if (_menuNames.Contains(menuItem.Key)) continue;
+                    _menuNames.Add(menuItem.Key);
+                }
+                else
+                {
+                    if (!_menuNames.Contains(menuItem.Key)) continue;
+                    _menuNames.Remove(menuItem.Key);
+                }
             }
-
+            
+            _moduleName = EditorGUILayout.TextField ("Module name", _moduleName);
+            
             if (!GUILayout.Button("Create")) return;
-            CreateStructure(_menuNames);
+            
+            CreateStructure(_menuNames, _moduleName);
             Close();
         }
 
-        private static void CreateStructure(List<string> menuItems)
+        private static void CreateStructure(List<string> menuItems, string moduleName)
         {
             var path = GetSelectedPathOrFallback();
 
             menuItems.ForEach(x=> AssetDatabase.CreateFolder(path, x));
+        }
+        
+        private static void CreateScriptAsset(string templatePath, string destName) 
+        {
+#if UNITY_2019_1_OR_NEWER
+            UnityEditor.ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, destName);
+#else
+	typeof(UnityEditor.ProjectWindowUtil)
+		.GetMethod("CreateScriptAsset", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic)
+		.Invoke(null, new object[] { templatePath, destName });
+#endif
+            
         }
         
         private static string GetSelectedPathOrFallback()
