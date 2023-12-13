@@ -27,7 +27,7 @@ namespace Ball.Tests.Manual
             _spawnButton.onClick.AddListener(OnSpawnClick); 
             _forceButton.onClick.AddListener(OnForceClick);
             
-            _gameArea.Spawn();
+            // _gameArea.Spawn();
         }
 
         private void OnSpawnClick()

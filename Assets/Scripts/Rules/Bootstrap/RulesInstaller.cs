@@ -7,12 +7,17 @@ namespace Rules.Bootstrap
         public override void InstallBindings()
         {
             Container
-                .BindInterfacesTo<DebugGameRule>()
+                .BindInterfacesTo<CueRule>()
                 .AsSingle()
                 .NonLazy();
             
             Container
                 .BindInterfacesTo<CameraRule>()
+                .AsSingle()
+                .NonLazy();
+            
+            Container
+                .BindInterfacesTo<GameRule>()
                 .AsSingle()
                 .NonLazy();
         }
