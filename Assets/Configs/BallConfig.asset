@@ -15,9 +15,10 @@ MonoBehaviour:
   _data:
     _prefab: {fileID: 6898116187441548249, guid: dc9d141df8160524e8d79dfcd8c93c67,
       type: 3}
-    _sleepThreshold: 0
+    _sleepThreshold: 16
     _rotationSpeed: 1.5
     _defaultHitPoints: 128
+    _firstBallMaxPoints: 1024
     _hitPointsData:
     - _color: {r: 1, g: 0.3066038, b: 0.3066038, a: 0}
       _hitPoints: 128

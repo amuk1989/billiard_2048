@@ -1,12 +1,10 @@
-﻿using System;
+﻿using System.Threading;
 using Ball.Interfaces;
 using Base.Rules;
-using Camera.Interfaces;
 using Cue.Interfaces;
 using Cysharp.Threading.Tasks;
 using GameStage.Data;
 using GameStage.Interfaces;
-using Input.Interface;
 using UniRx;
 using UnityEngine;
 
@@ -18,7 +16,7 @@ namespace Rules
         private readonly ICueService _cueService;
         
         private readonly CompositeDisposable _compositeDisposable = new();
-
+        private CancellationTokenSource _tokenSource;
 
         public GameRule(IGameStageService gameStageService, IBallService ballService, 
             ICueService cueService) : base(gameStageService)
@@ -31,26 +29,39 @@ namespace Rules
         {
             if (gameStageId == GameStageId.Game)
             {
+                _tokenSource = new CancellationTokenSource();
+                
                 _cueService.GetHitProvider()
                     .OnHitAsObservable()
-                    .Subscribe(async value =>
-                    {
-                        _ballService.SetForce(-value * 100);
-                        await UniTask.Delay(3000);
-                        _ballService.Spawn(Vector3.up*0.75f);
-                    })
+                    .Subscribe(OnHit)
                     .AddTo(_compositeDisposable);
             }
             else
             {
-                _compositeDisposable?.Dispose();
+                StopGame();
             }
         }
 
+        private void StopGame()
+        {
+            _compositeDisposable?.Dispose();
+            _tokenSource?.Cancel();
+            _tokenSource?.Dispose();
+            _tokenSource = null;
+        }
+
+        private async void OnHit(Vector3 value)
+        {
+            _ballService.SetForce(-value * 100);
+            await UniTask
+                .Delay(3000, cancellationToken: _tokenSource.Token)
+                .SuppressCancellationThrow();
+            _ballService.Spawn(Vector3.up*0.75f);
+        }
 
         public override void Dispose()
         {
-            _compositeDisposable?.Dispose();
+            StopGame();
             base.Dispose();
         }
     }

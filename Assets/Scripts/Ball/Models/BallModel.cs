@@ -6,6 +6,7 @@ using Base.Interfaces;
 using UniRx;
 using UnityEngine;
 using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Ball.Models
 {
@@ -19,6 +20,7 @@ namespace Ball.Models
         private readonly ReactiveProperty<uint> _hitPoints = new();
 
         private Vector3 _velocity;
+        private int _maxIndex;
 
         private readonly CompositeDisposable _compositeDisposable = new();
         private readonly BallConfigData _configData;
@@ -42,7 +44,24 @@ namespace Ball.Models
 
         public void Initialize()
         {
-            _hitPoints.Value = _configData.DefaultHitPoints;
+            var i = _configData.HitPointsData.Length/2;
+
+            do
+            {
+                i = _configData.FirstBallMaxPoints < _configData.HitPointsData[i].HitPoints? i/2 : i + i/2;
+            } while (_configData.FirstBallMaxPoints < _configData.HitPointsData[i].HitPoints
+                     || _configData.FirstBallMaxPoints > _configData.HitPointsData[i + 1].HitPoints);
+            
+            _maxIndex = i;
+            
+            SetPoints();
+        }
+
+        private void SetPoints()
+        {
+            var randomIndex = Mathf.RoundToInt(Random.Range(0, _maxIndex+1));
+            
+            _hitPoints.Value = _configData.HitPointsData[randomIndex].HitPoints;
         }
 
         public void Dispose()

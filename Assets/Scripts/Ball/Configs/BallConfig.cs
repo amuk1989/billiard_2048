@@ -18,6 +18,7 @@ namespace Ball.Configs
         [Range(0, 100)] [SerializeField] private uint _sleepThreshold = 25;
         [Range(0, 3)] [SerializeField] private float _rotationSpeed = 1f;
         [Range(0, 1024)] [SerializeField] private uint _defaultHitPoints = 128;
+        [SerializeField] private uint _firstBallMaxPoints;
 
         [Header("View settings")] [SerializeField]
         private HitPointsPresentData[] _hitPointsData;
@@ -27,6 +28,7 @@ namespace Ball.Configs
         public float RotationSpeed => _rotationSpeed;
         public uint DefaultHitPoints => _defaultHitPoints;
         public HitPointsPresentData[] HitPointsData => _hitPointsData;
+        public uint FirstBallMaxPoints => _firstBallMaxPoints;
     }
 
     [Serializable]
