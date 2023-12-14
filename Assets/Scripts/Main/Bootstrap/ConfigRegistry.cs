@@ -2,6 +2,7 @@
 using Camera.Configs;
 using Cue.Configs;
 using GameArea.Data;
+using GameStage.Controllers;
 using Input.Configs;
 using UnityEngine;
 using Utility;
@@ -17,6 +18,7 @@ namespace Main.Bootstrap
         [SerializeField] private CameraConfig _cameraConfigData;
         [SerializeField] private CueConfig _cueConfig;
         [SerializeField] private InputConfig _inputConfig;
+        [SerializeField] private GameStageConfig _gameStageConfig;
             
         public override void InstallBindings()
         {
@@ -25,6 +27,7 @@ namespace Main.Bootstrap
             Container.InstallRegistry(_cameraConfigData.Data);
             Container.InstallRegistry(_cueConfig.Data);
             Container.InstallRegistry(_inputConfig.Data);
+            Container.InstallRegistry(_gameStageConfig.Data);
         }
     }
 }

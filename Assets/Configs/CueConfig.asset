@@ -19,6 +19,6 @@ MonoBehaviour:
     _maxMoving: 500
     _hitMoving: 0
     _minEnergy: 1
-    _maxEnergy: 500
+    _maxEnergy: 1000
     _cueSpeed: 5
     _cueHitSpeed: 40

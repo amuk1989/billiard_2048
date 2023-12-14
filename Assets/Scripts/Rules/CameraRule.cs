@@ -1,43 +1,65 @@
-﻿using Ball.Interfaces;
+﻿using System;
+using System.Threading.Tasks;
+using Ball.Interfaces;
+using Base.Rules;
 using Camera.Interfaces;
 using Cysharp.Threading.Tasks;
+using GameStage.Data;
+using GameStage.Interfaces;
 using Input.Interface;
 using UniRx;
 using Zenject;
 
 namespace Rules
 {
-    public class CameraRule: IInitializable
+    public class CameraRule: BaseGamesRule
     {
         private readonly IInputService _inputService;
         private readonly ICameraService _cameraService;
-        private readonly IBallService _ballService;
+        
+        private IDisposable _inputFlow;
 
-        private readonly CompositeDisposable _compositeDisposable = new();
-
-        public CameraRule(IInputService inputService, ICameraService cameraService, IBallService ballService)
+        public CameraRule(IGameStageService gameStageService, 
+            IInputService inputService, ICameraService cameraService) : base(gameStageService)
         {
             _inputService = inputService;
             _cameraService = cameraService;
-            _ballService = ballService;
         }
 
-        public async void Initialize()
+        protected override void OnStageChanged(GameStageId gameStageId)
         {
-            await UniTask.WaitUntil(() => _ballService.GetMainBallPositionProvider() != null);
-            
-            _cameraService.LookAt(_ballService.GetMainBallPositionProvider().Position);
-            
-            _inputService
+            if (gameStageId == GameStageId.Game)
+            {
+                StartCamera();
+            }
+            else
+            {
+                StopCamera();
+            }
+        }
+
+        private void StartCamera()
+        {
+            _inputFlow = _inputService
                 .CursorPositionAsObservable()
                 .Where(x => _inputService.TapStatus == TapStatus.OnDrag)
                 .Subscribe(value =>
                 {
                     if (_inputService.TapStatus != TapStatus.OnDrag) return;
-                    
+
                     _cameraService.RotateAroundTarget(value);
-                })
-                .AddTo(_compositeDisposable);
+                });
+        }
+
+        private void StopCamera()
+        {
+            _inputFlow?.Dispose();
+        }
+
+        public override void Dispose()
+        {
+            StopCamera();
+            base.Dispose();
         }
     }
 }

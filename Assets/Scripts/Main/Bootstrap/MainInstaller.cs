@@ -2,6 +2,7 @@
 using Camera.Bootstrap;
 using Cue.Bootstrap;
 using GameArea.Bootstrap;
+using GameStage.Bootstrap;
 using Input.Bootstrap;
 using Rules.Bootstrap;
 using Zenject;
@@ -12,6 +13,7 @@ namespace Main.Bootstrap
     {
         public override void InstallBindings()
         {
+            Container.Install<GameStageInstaller>();
             Container.Install<BallsInstaller>();
             Container.Install<GameAreaInstaller>();
             Container.Install<CameraInstaller>();

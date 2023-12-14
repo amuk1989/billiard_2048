@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Base.Data
 {
-    public abstract class BaseConfig<TData> : ScriptableObject where TData: class, IConfigData
+    public abstract class BaseConfig<TData> : ScriptableObject where TData: IConfigData
     {
         [SerializeField] private TData _data;
 
