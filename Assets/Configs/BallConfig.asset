@@ -28,3 +28,9 @@ MonoBehaviour:
       _hitPoints: 512
     - _color: {r: 0.94870424, g: 0.9528302, b: 0.1033731, a: 0}
       _hitPoints: 1024
+    - _color: {r: 0.9529412, g: 0.10196078, b: 0.8932746, a: 0}
+      _hitPoints: 2048
+    - _color: {r: 0, g: 1, b: 0.9600265, a: 0}
+      _hitPoints: 4096
+    - _color: {r: 0.4775644, g: 0.19339621, b: 1, a: 0}
+      _hitPoints: 8192
